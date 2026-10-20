@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-10-20d">
+  <link rel="stylesheet" href="style.css?v=2026-10-20e">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -35,18 +35,21 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top">Handral Poornakanta</a>
+    <div class="brand-group">
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+      <a class="brand" href="#top">Handral Poornakanta</a>
+    </div>
     <nav class="site-nav" aria-label="Sections">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#patent">Patent</a>
+      <a href="#conferences">Conferences</a>
       <a href="#background">Background</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
-      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
-      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
-    </button>
   </div>
 </header>
 
@@ -67,7 +70,7 @@
             research associate building flexible robots and vision-based measurement setups.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="files/Poornakanta_Handral_CV.pdf">Download CV (PDF)</a>
+            <a class="btn btn-primary" href="files/Poornakanta_Handral_CV.pdf">Download CV</a>
             <a class="btn btn-secondary" href="mailto:poornakantah@iisc.ac.in">Email me</a>
           </div>
         </div>
@@ -645,6 +648,23 @@
     </div>
   </section>
 
+  <!-- ================= CONFERENCES ================= -->
+  <section id="conferences">
+    <div class="wrap">
+      <h2>Conferences</h2>
+      <ol class="pubs talks">
+        <li><span class="yr">2024</span><div>
+          <span class="title">Thermal expansion coefficients from post-buckling behavior</span><br>
+          <span class="venue">International Conference on Experimental Mechanics (ICEM)</span>, IIT Madras, 20–23 October 2024<br>
+          <span class="meta">Oral presentation; <a href="files/certificates/icem-2024-presentation.pdf">certificate</a></span></div></li>
+        <li><span class="yr">2019</span><div>
+          <span class="title">Shape control for the elastica through load optimization</span><br>
+          <span class="venue">4th Indian Conference on Applied Mechanics (INCAM)</span><br>
+          <span class="meta">Oral presentation</span></div></li>
+      </ol>
+    </div>
+  </section>
+
   <!-- ================= BACKGROUND ================= -->
   <section id="background">
     <div class="wrap">
@@ -660,12 +680,7 @@
           </ul>
         </div>
         <div>
-          <h3>Talks</h3>
-          <ul class="plain">
-            <li>Thermal expansion coefficients from post-buckling behavior<span class="when">International Conference on Experimental Mechanics (ICEM), IIT Madras, October 2024; <a href="files/certificates/icem-2024-presentation.pdf">certificate</a></span></li>
-            <li>Shape control for the elastica through load optimization<span class="when">Indian Conference on Applied Mechanics (INCAM), 2019</span></li>
-          </ul>
-          <h3 style="margin-top:1.75rem">Honours and certifications</h3>
+          <h3>Honours and certifications</h3>
           <ul class="plain">
             <li>One of the first-prize winners, Dare to Dream 2.0, DRDO<span class="when">October 2021; facilitated by the Hon'ble Defence Minister, Shri Rajnath Singh</span></li>
             <li>COMSOL Multiphysics: Nonlinear Structural Materials Modeling<span class="when">Training course, COMSOL, Bengaluru, August 2024; <a href="files/certificates/comsol-nonlinear-structural-materials-2024.pdf">certificate</a></span></li>
@@ -679,9 +694,13 @@
         <img src="images/dare-to-dream.jpg" alt="Dare to Dream 2.0 award ceremony" width="1200" height="800" loading="lazy">
         <figcaption>Dare to Dream 2.0 award ceremony, DRDO, October 2021.</figcaption>
       </figure>
-      <h3 style="margin-top:2.25rem">Tools I work with</h3>
-      <p class="lead">Experiments: test-rig design, stereo vision and ArUco markers, CMM, DAQ, Arduino and Raspberry Pi, LabVIEW.
-         Computation: Python, MATLAB, Mathematica, C/C++, Abaqus, ANSYS, COMSOL. Design: Creo, SolidWorks, AutoCAD, 3D printing. Visuals: Adobe Creative Suite, Blender, Inkscape.</p>
+      <h3 class="tools-title">Tools I work with</h3>
+      <div class="tools">
+        <div><h4>Experiments</h4><ul><li>Test-rig design</li><li>Stereo vision and ArUco markers</li><li>CMM</li><li>DAQ</li><li>Arduino and Raspberry Pi</li><li>LabVIEW</li></ul></div>
+        <div><h4>Computation</h4><ul><li>Python</li><li>MATLAB</li><li>Mathematica</li><li>C/C++</li><li>Abaqus</li><li>ANSYS</li><li>COMSOL</li></ul></div>
+        <div><h4>Design</h4><ul><li>Creo</li><li>SolidWorks</li><li>AutoCAD</li><li>3D printing</li></ul></div>
+        <div><h4>Visuals</h4><ul><li>Adobe Creative Suite</li><li>Blender</li><li>Inkscape</li></ul></div>
+      </div>
     </div>
   </section>
 
@@ -692,7 +711,7 @@
       <p>Email <a href="mailto:poornakantah@iisc.ac.in">poornakantah@iisc.ac.in</a><br>
          Department of Mechanical Engineering, Indian Institute of Science, Bengaluru-12</p>
       <div class="links">
-        <a href="files/Poornakanta_Handral_CV.pdf">CV (PDF)</a>
+        <a href="files/Poornakanta_Handral_CV.pdf">CV</a>
         <a href="https://orcid.org/0009-0005-5026-2038">ORCID</a>
         <a href="https://www.linkedin.com/in/handral-poornakanta">LinkedIn</a>
         <!-- Add when ready:
