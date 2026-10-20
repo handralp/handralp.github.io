@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-10-20e">
+  <link rel="stylesheet" href="style.css?v=2026-10-20g">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -507,7 +507,7 @@
                data-light="images/research-thermal-expansion-light" data-dark="images/research-thermal-expansion"
                  width="1920" height="1080" autoplay muted loop playsinline preload="metadata"
                  aria-label="Animation: a clamped-clamped beam is Joule heated, its ends stay cool, and it buckles upward as its temperature rises"></video>
-          <a class="dl" href="images/research-thermal-expansion-light.mp4" download>Download video (MP4, 1080p)</a>
+          <button class="enlarge" type="button" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
         </div>
         <div>
           <h3>Thermal expansion from post-buckled shapes</h3>
@@ -525,7 +525,7 @@
                data-light="images/research-cable-robot-light" data-dark="images/research-cable-robot"
                  width="1920" height="1080" autoplay muted loop playsinline preload="metadata"
                  aria-label="Animation of the cable-driven cantilever robot: two cables pull an elastic beam so its tip traces a target path"></video>
-          <a class="dl" href="images/research-cable-robot-light.mp4" download>Download video (MP4, 1080p)</a>
+          <button class="enlarge" type="button" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
         </div>
         <div>
           <h3>A cantilever beam as a cable robot</h3>
@@ -543,7 +543,7 @@
                  data-light="images/research-stereo-vision-light" data-dark="images/research-stereo-vision"
                  width="1920" height="1080" autoplay muted loop playsinline preload="metadata"
                  aria-label="Experimental ArUco-marker reconstruction of a Möbius strip: eight partial reconstructions merge into the full strip"></video>
-          <a class="dl" href="images/research-stereo-vision-light.mp4" download>Download video (MP4, 1080p)</a>
+          <button class="enlarge" type="button" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
         </div>
         <div>
           <h3>Stereo measurement of large deformations</h3>
@@ -656,7 +656,7 @@
         <li><span class="yr">2024</span><div>
           <span class="title">Thermal expansion coefficients from post-buckling behavior</span><br>
           <span class="venue">International Conference on Experimental Mechanics (ICEM)</span>, IIT Madras, 20–23 October 2024<br>
-          <span class="meta">Oral presentation; <a href="files/certificates/icem-2024-presentation.pdf">certificate</a></span></div></li>
+          <span class="meta">Oral presentation</span></div></li>
         <li><span class="yr">2019</span><div>
           <span class="title">Shape control for the elastica through load optimization</span><br>
           <span class="venue">4th Indian Conference on Applied Mechanics (INCAM)</span><br>
@@ -683,9 +683,9 @@
           <h3>Honours and certifications</h3>
           <ul class="plain">
             <li>One of the first-prize winners, Dare to Dream 2.0, DRDO<span class="when">October 2021; facilitated by the Hon'ble Defence Minister, Shri Rajnath Singh</span></li>
-            <li>COMSOL Multiphysics: Nonlinear Structural Materials Modeling<span class="when">Training course, COMSOL, Bengaluru, August 2024; <a href="files/certificates/comsol-nonlinear-structural-materials-2024.pdf">certificate</a></span></li>
-            <li>NI LabVIEW NXG: Data Acquisition Using LabVIEW NXG<span class="when">Online course, NI Customer Education, April 2020; <a href="files/certificates/labview-nxg-data-acquisition-2020.pdf">certificate</a></span></li>
-            <li>NI LabVIEW NXG Core 2: Create User-Driven Applications<span class="when">Online course, NI Customer Education, April 2020; <a href="files/certificates/labview-nxg-core2-2020.pdf">certificate</a></span></li>
+            <li>COMSOL Multiphysics: Nonlinear Structural Materials Modeling<span class="when">Training course, COMSOL, Bengaluru, August 2024</span></li>
+            <li>NI LabVIEW NXG: Data Acquisition Using LabVIEW NXG<span class="when">Online course, NI Customer Education, April 2020</span></li>
+            <li>NI LabVIEW NXG Core 2: Create User-Driven Applications<span class="when">Online course, NI Customer Education, April 2020</span></li>
           </ul>
         </div>
       </div>
@@ -723,6 +723,22 @@
   </section>
 </main>
 
+<dialog class="lightbox" aria-label="Enlarged video">
+  <div class="lb-frame">
+    <video class="lb-video" controls loop muted playsinline></video>
+    <div class="lb-bar">
+      <span class="lb-title"></span>
+      <a class="lb-download" href="#" download aria-label="Download video (MP4, 1080p)" title="Download video (MP4, 1080p)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg>
+      </a>
+      <button class="lb-close" type="button" aria-label="Close" title="Close (Esc)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+
 <footer class="site-footer">
   <div class="wrap">Last updated October 2026</div>
 </footer>
@@ -747,7 +763,6 @@ function applyTheme(t) {
     var time = v.currentTime, playing = !v.paused;
     v.poster = base + '.jpg'; v.src = src;
     v.addEventListener('loadedmetadata', function once() { v.removeEventListener('loadedmetadata', once); try { v.currentTime = time; } catch (e) {} if (playing) v.play().catch(function () {}); });
-    var dl = v.parentNode.querySelector('a.dl'); if (dl) dl.href = src;
   });
 }
 applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
@@ -755,6 +770,30 @@ btn.addEventListener('click', function () {
   var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   applyTheme(t);
   try { localStorage.setItem('theme', t); } catch (e) {}
+});
+/* Lightbox: enlarge a research video, with a download link for the version on screen. */
+var lb = document.querySelector('.lightbox'), lbv = lb.querySelector('.lb-video');
+document.querySelectorAll('.media .enlarge').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var v = b.parentNode.querySelector('video');
+    var src = v.getAttribute('src');
+    lbv.poster = v.poster; lbv.src = src;
+    lb.querySelector('.lb-download').href = src;
+    lb.querySelector('.lb-title').textContent = v.closest('.theme').querySelector('h3').textContent;
+    v.pause();
+    lb.showModal();
+    lbv.currentTime = 0;
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) lbv.play().catch(function () {});
+  });
+});
+function closeLb() { lbv.pause(); lb.close(); }
+lb.querySelector('.lb-close').addEventListener('click', closeLb);
+lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });     // click on the dimmed backdrop
+lb.addEventListener('close', function () {
+  lbv.pause(); lbv.removeAttribute('src'); lbv.load();
+  document.querySelectorAll('video.autovideo').forEach(function (v) {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) v.play().catch(function () {});
+  });
 });
 /* 2. Highlight the menu link for the section on screen. */
 var links = {};
