@@ -236,7 +236,7 @@ p { margin: 0 0 1rem; }
 
 /* Tools: four groups across the full width */
 .tools-title { margin-top: 2.5rem; }
-.tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 2.5rem; margin-top: 0.75rem; }
+.tools { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem 2rem; margin-top: 0.75rem; }
 .tools h4 { font: 600 0.95rem/1.3 var(--sans); color: var(--accent); margin: 0 0 0.5rem; }
 .tools ul { list-style: none; margin: 0; padding: 0; }
 .tools li { padding: 0.2rem 0; color: var(--ink); font-size: 0.98rem; }
