@@ -6,6 +6,7 @@ A plain HTML/CSS site for GitHub Pages. No build step, nothing to install.
 index.html        the page (all text lives here)
 style.css         colours, fonts, layout
 images/           every picture on the site — replace these
+gallery/          gallery videos, their poster images and readme.txt
 files/            downloadable files (the CV PDF)
 .nojekyll         tells GitHub Pages to serve the files as they are
 ```
@@ -31,6 +32,8 @@ No code changes needed.
 | `pub-2020-elastica-robot.jpg` | Extreme Mechanics Letters 2020 paper | 1200 × 800 (3:2) |
 | `pub-2019-shape-control.jpg` | J. Applied Mechanics 2019 paper | 1200 × 800 (3:2) |
 | `dare-to-dream.jpg` | Dare to Dream 2.0 award-ceremony photo | 1200 × 800 (3:2) |
+| `qr-handralp.svg` | QR code shown in Contact (opens https://handralp.github.io) | — |
+| `qr-handralp.png` | Downloadable QR card with name and web address, for sharing | — |
 | `og-preview.jpg` | Preview image when the link is shared on WhatsApp/LinkedIn | 1200 × 630 |
 | `favicon.svg` | Browser-tab icon (already made; optional to change) | — |
 
@@ -48,6 +51,20 @@ of its labelled opening frame, shown until it plays. To give another topic a vid
 `<video …>` block in `index.html` and change the `src`, `poster`, `data-light` and `data-dark`
 names. Use MP4 (H.264), no audio, under ~10 MB.
 
+**Gallery:** the Gallery section (after Research) shows each video in `gallery/` as a
+thumbnail with a play button; clicking it opens the video in the same enlarged player, with a
+download icon. Details of each video are in `gallery/readme.txt`. To add one, put the `.mp4` and
+a `.jpg` poster frame in `gallery/`, then copy one `<figure class="gal-item">` block in `index.html`
+and change `data-src`, `data-title`, the poster and the text (write spaces in file names as `%20`).
+Gallery videos have a single version, used in both themes.
+
+**QR code:** the Contact section shows a QR code for https://handralp.github.io, with a download
+icon for the shareable PNG card. It stays dark-on-white in both themes so phones can scan it. If the
+web address ever changes, regenerate both files, e.g. with Python:
+`pip install segno`, then
+`python -c "import segno; q=segno.make('https://NEW-ADDRESS', error='q'); q.save('images/qr-handralp.svg', scale=10, border=2); q.save('images/qr-handralp.png', scale=20, border=4)"`
+(this makes a plain PNG without the name; that is fine).
+
 **Light and dark theme:** the site opens in the light theme. The sun/moon icon in the header
 switches to dark, and the browser remembers the visitor's choice. Dark colours are set in
 `style.css` under `:root[data-theme="dark"]`.
@@ -58,18 +75,11 @@ If your file is a `.png`, either convert it to `.jpg` or change the matching
 To update the CV, replace `files/Poornakanta_Handral_CV.pdf` (keep the name).
 This public copy has no phone number on purpose.
 
-## Publishing on GitHub Pages (first time)
+## Where it lives
 
-1. Create a free account at github.com. Your username becomes your web address.
-2. Create a new **public** repository named exactly `handralp.github.io`
-   (replace handralp with your GitHub username).
-3. Upload the contents of this folder (not the folder itself):
-   **Add file → Upload files**, drag everything in, then **Commit changes**.
-   Or, with GitHub Desktop: clone the repo into `D:\GitHub`, copy these files in, commit, push.
-4. In the repository go to **Settings → Pages**, set *Source* to
-   **Deploy from a branch**, branch **main**, folder **/ (root)**, and save.
-5. After a minute or two the site is live at `https://handralp.github.io`.
-6. In `index.html`, replace `handralp` in the `og:image` line so link previews work.
+The site is published from the GitHub repository `handralp/handralp.github.io` (branch `main`,
+folder `/ (root)`, set in **Settings → Pages**) at https://handralp.github.io.
+The local copy is `D:\GitHub\webpage\handralp.github.io`; commit and push with GitHub Desktop.
 
 ## Updating later
 
@@ -77,7 +87,7 @@ Edit `index.html` (any text editor works), then upload or push the changed
 files. GitHub republishes automatically within a minute or two.
 
 - **After editing `style.css`:** change the `?v=…` tag on the stylesheet link in `index.html`
-  (for example to `?v=2026-10-25`) so browsers load the new version instead of a cached one.
+  (for example to `?v=2026-11-15`) so browsers load the new version instead of a cached one.
 
 - **Profile links:** ORCID and LinkedIn are in the Contact section. To add Google Scholar or GitHub,
   remove the `<!--` and `-->` around those two lines and put in your own URLs.

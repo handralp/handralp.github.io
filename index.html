@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-10-21">
+  <link rel="stylesheet" href="style.css?v=2026-11-02">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -44,6 +44,7 @@
     </div>
     <nav class="site-nav" aria-label="Sections">
       <a href="#research">Research</a>
+      <a href="#gallery">Gallery</a>
       <a href="#publications">Publications</a>
       <a href="#patent">Patent</a>
       <a href="#conferences">Conferences</a>
@@ -557,6 +558,43 @@
     </div>
   </section>
 
+  <!-- ================= GALLERY ================= -->
+  <!-- Videos live in gallery/. To add one: copy a <figure> block, change data-src, data-title, the poster image and the text. -->
+  <section id="gallery">
+    <div class="wrap">
+      <h2>Gallery</h2>
+      <p class="lead">Demonstrations and supplementary videos from the experiments.</p>
+      <div class="gal-grid">
+        <figure class="gal-item">
+          <button class="gal-open" type="button" data-src="gallery/tip-controlled%20elastica%20robot.mp4"
+                  data-title="Tip-controlled elastica robot" aria-label="Play video: Tip-controlled elastica robot">
+            <img src="gallery/tip-controlled-elastica-robot.jpg" alt="" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="dur">2:00</span>
+          </button>
+          <figcaption>
+            <h3>Tip-controlled elastica robot</h3>
+            <p>The cable-driven robot at work: the beam tip is positioned on a target by optimising the cable loads, here tracing a reference shape.</p>
+            <p class="refs">Extreme Mechanics Letters (2020) · <a href="#cable-robot">Research</a></p>
+          </figcaption>
+        </figure>
+        <figure class="gal-item">
+          <button class="gal-open" type="button" data-src="gallery/elastic_ribbons.mp4"
+                  data-title="Elastic ribbons: simulations &amp; experiments" aria-label="Play video: Elastic ribbons, simulations and experiments">
+            <img src="gallery/elastic_ribbons.jpg" alt="" width="888" height="500" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="dur">1:31</span>
+          </button>
+          <figcaption>
+            <h3>Elastic ribbons: simulations &amp; experiments</h3>
+            <p>Supplementary video for the paper: ribbons twisted in a test rig, measured as point clouds and compared with Cosserat plate simulations.</p>
+            <p class="refs">Journal of the Mechanics and Physics of Solids (2020) · <a href="#stereo">Research</a></p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= PUBLICATIONS ================= -->
   <section id="publications">
     <div class="wrap">
@@ -709,6 +747,8 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>Contact</h2>
+      <div class="contact-grid">
+      <div>
       <p>Email <a href="mailto:poornakantah@iisc.ac.in">poornakantah@iisc.ac.in</a><br>
          Department of Mechanical Engineering, Indian Institute of Science, Bengaluru-12</p>
       <div class="links">
@@ -719,6 +759,16 @@
         <a href="https://scholar.google.com/citations?user=YOUR-ID">Google Scholar</a>
         <a href="https://github.com/handralp">GitHub</a>
         -->
+      </div>
+      </div>
+      <!-- QR code for https://handralp.github.io. images/qr-handralp.png is the shareable card (with name), .svg the bare code. -->
+      <figure class="qr">
+        <img src="images/qr-handralp.svg" alt="QR code linking to handralp.github.io" width="290" height="290">
+        <figcaption>Scan to visit
+          <a class="qr-download" href="images/qr-handralp.png" download="Handral-Poornakanta-QR.png"
+             aria-label="Download QR code (PNG)" title="Download QR code (PNG)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg></a>
+        </figcaption>
+      </figure>
       </div>
     </div>
   </section>
@@ -772,19 +822,28 @@ btn.addEventListener('click', function () {
   applyTheme(t);
   try { localStorage.setItem('theme', t); } catch (e) {}
 });
-/* Lightbox: enlarge a research video, with a download link for the version on screen. */
+/* Lightbox: enlarge a research or gallery video, with a download link for the version on screen. */
 var lb = document.querySelector('.lightbox'), lbv = lb.querySelector('.lb-video');
+function openLb(src, poster, title, label) {
+  lbv.poster = poster || ''; lbv.src = src;
+  var d = lb.querySelector('.lb-download');
+  d.href = src; d.setAttribute('aria-label', label); d.title = label;
+  lb.querySelector('.lb-title').textContent = title;
+  document.querySelectorAll('video.autovideo').forEach(function (v) { v.pause(); });
+  lb.showModal();
+  lbv.currentTime = 0;
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) lbv.play().catch(function () {});
+}
 document.querySelectorAll('.media .enlarge').forEach(function (b) {
   b.addEventListener('click', function () {
     var v = b.parentNode.querySelector('video');
-    var src = v.getAttribute('src');
-    lbv.poster = v.poster; lbv.src = src;
-    lb.querySelector('.lb-download').href = src;
-    lb.querySelector('.lb-title').textContent = v.closest('.theme').querySelector('h3').textContent;
-    v.pause();
-    lb.showModal();
-    lbv.currentTime = 0;
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) lbv.play().catch(function () {});
+    openLb(v.getAttribute('src'), v.poster, v.closest('.theme').querySelector('h3').textContent, 'Download video (MP4, 1080p)');
+  });
+});
+/* Gallery: each thumbnail opens its video in the same lightbox. */
+document.querySelectorAll('.gal-open').forEach(function (b) {
+  b.addEventListener('click', function () {
+    openLb(b.dataset.src, b.querySelector('img').getAttribute('src'), b.dataset.title, 'Download video (MP4)');
   });
 });
 function closeLb() { lbv.pause(); lb.close(); }
