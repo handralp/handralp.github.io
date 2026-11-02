@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-11-02">
+  <link rel="stylesheet" href="style.css?v=2026-11-02b">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -761,13 +761,18 @@
         -->
       </div>
       </div>
-      <!-- QR code for https://handralp.github.io. images/qr-handralp.png is the shareable card (with name), .svg the bare code. -->
+      <!-- QR code for https://handralp.github.io. images/qr-handralp.svg is shown; images/qr-handralp.png (card with name) is what "Share QR code" sends. -->
       <figure class="qr">
-        <img src="images/qr-handralp.svg" alt="QR code linking to handralp.github.io" width="290" height="290">
-        <figcaption>Scan to visit
-          <a class="qr-download" href="images/qr-handralp.png" download="Handral-Poornakanta-QR.png"
-             aria-label="Download QR code (PNG)" title="Download QR code (PNG)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg></a>
-        </figcaption>
+        <div class="qr-card">
+          <img src="images/qr-handralp.svg" alt="QR code linking to handralp.github.io" width="370" height="370">
+          <button class="qr-share" type="button" aria-label="Share" title="Share" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="M8.2 10.9l7.6-4.3M8.2 13.1l7.6 4.3"/></svg></button>
+          <div class="share-menu" role="menu" hidden>
+            <button type="button" role="menuitem" data-share="link">Share link</button>
+            <button type="button" role="menuitem" data-share="qr">Share QR code</button>
+          </div>
+        </div>
+        <figcaption>Scan to visit</figcaption>
+        <p class="share-status" aria-live="polite"></p>
       </figure>
       </div>
     </div>
@@ -853,6 +858,34 @@ lb.addEventListener('close', function () {
   lbv.pause(); lbv.removeAttribute('src'); lbv.load();
   document.querySelectorAll('video.autovideo').forEach(function (v) {
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) v.play().catch(function () {});
+  });
+});
+/* Share (Contact QR): a small menu to share the page link or the QR card.
+   Uses the phone's share sheet where available; otherwise copies the link / downloads the QR. */
+var shareBtn = document.querySelector('.qr-share'), shareMenu = document.querySelector('.share-menu'),
+    shareStatus = document.querySelector('.share-status'), SITE = 'https://handralp.github.io';
+function setMenu(open) { shareMenu.hidden = !open; shareBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+function say(t) { shareStatus.textContent = t; setTimeout(function () { shareStatus.textContent = ''; }, 2500); }
+shareBtn.addEventListener('click', function (e) { e.stopPropagation(); setMenu(shareMenu.hidden); });
+document.addEventListener('click', function (e) { if (!shareMenu.contains(e.target)) setMenu(false); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+shareMenu.addEventListener('click', function (e) {
+  var kind = e.target.dataset && e.target.dataset.share; if (!kind) return;
+  setMenu(false);
+  var data = { title: 'Handral Poornakanta', text: 'Handral Poornakanta — research, publications and contact', url: SITE };
+  if (kind === 'link') {
+    if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(SITE) : Promise.reject())
+      .then(function () { say('Link copied'); }, function () { say(SITE); });
+    return;
+  }
+  fetch('images/qr-handralp.png').then(function (r) { return r.blob(); }).then(function (blob) {
+    var file = new File([blob], 'Handral-Poornakanta-QR.png', { type: 'image/png' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      return navigator.share({ files: [file], title: data.title, text: SITE }).catch(function () {});
+    }
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name;
+    document.body.appendChild(a); a.click(); a.remove(); say('QR code downloaded');
   });
 });
 /* 2. Highlight the menu link for the section on screen. */

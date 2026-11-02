@@ -33,7 +33,7 @@ No code changes needed.
 | `pub-2019-shape-control.jpg` | J. Applied Mechanics 2019 paper | 1200 × 800 (3:2) |
 | `dare-to-dream.jpg` | Dare to Dream 2.0 award-ceremony photo | 1200 × 800 (3:2) |
 | `qr-handralp.svg` | QR code shown in Contact (opens https://handralp.github.io) | — |
-| `qr-handralp.png` | Downloadable QR card with name and web address, for sharing | — |
+| `qr-handralp.png` | QR card with name and web address, sent by "Share QR code" | — |
 | `og-preview.jpg` | Preview image when the link is shared on WhatsApp/LinkedIn | 1200 × 630 |
 | `favicon.svg` | Browser-tab icon (already made; optional to change) | — |
 
@@ -58,11 +58,13 @@ a `.jpg` poster frame in `gallery/`, then copy one `<figure class="gal-item">` b
 and change `data-src`, `data-title`, the poster and the text (write spaces in file names as `%20`).
 Gallery videos have a single version, used in both themes.
 
-**QR code:** the Contact section shows a QR code for https://handralp.github.io, with a download
-icon for the shareable PNG card. It stays dark-on-white in both themes so phones can scan it. If the
+**QR code:** the Contact section shows a QR code for https://handralp.github.io. The share icon
+on its corner opens a small menu: **Share link** or **Share QR code** (the PNG card with name). On phones
+this opens the phone's share sheet (WhatsApp, email, …); on computers without one, the link is copied
+and the QR card is downloaded instead. It stays dark-on-white in both themes so phones can scan it. If the
 web address ever changes, regenerate both files, e.g. with Python:
 `pip install segno`, then
-`python -c "import segno; q=segno.make('https://NEW-ADDRESS', error='q'); q.save('images/qr-handralp.svg', scale=10, border=2); q.save('images/qr-handralp.png', scale=20, border=4)"`
+`python -c "import segno; q=segno.make('https://NEW-ADDRESS', error='q'); q.save('images/qr-handralp.svg', scale=10, border=4); q.save('images/qr-handralp.png', scale=20, border=4)"`
 (this makes a plain PNG without the name; that is fine).
 
 **Light and dark theme:** the site opens in the light theme. The sun/moon icon in the header
