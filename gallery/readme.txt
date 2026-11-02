@@ -14,4 +14,4 @@ elastic_ribbons.mp4
 
 To add a video: put the .mp4 (H.264, no audio, under ~10 MB) and a .jpg poster frame here,
 then copy one <figure class="gal-item"> block in index.html and change data-src, data-title,
-the poster and the text. File names with spaces must be written with %20 in data-src.
+the poster and the caption (title only). File names with spaces must be written with %20 in data-src.

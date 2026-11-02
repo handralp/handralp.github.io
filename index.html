@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-11-02b">
+  <link rel="stylesheet" href="style.css?v=2026-11-02c">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -44,11 +44,11 @@
     </div>
     <nav class="site-nav" aria-label="Sections">
       <a href="#research">Research</a>
-      <a href="#gallery">Gallery</a>
       <a href="#publications">Publications</a>
       <a href="#patent">Patent</a>
       <a href="#conferences">Conferences</a>
       <a href="#background">Background</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -558,43 +558,6 @@
     </div>
   </section>
 
-  <!-- ================= GALLERY ================= -->
-  <!-- Videos live in gallery/. To add one: copy a <figure> block, change data-src, data-title, the poster image and the text. -->
-  <section id="gallery">
-    <div class="wrap">
-      <h2>Gallery</h2>
-      <p class="lead">Demonstrations and supplementary videos from the experiments.</p>
-      <div class="gal-grid">
-        <figure class="gal-item">
-          <button class="gal-open" type="button" data-src="gallery/tip-controlled%20elastica%20robot.mp4"
-                  data-title="Tip-controlled elastica robot" aria-label="Play video: Tip-controlled elastica robot">
-            <img src="gallery/tip-controlled-elastica-robot.jpg" alt="" width="1280" height="720" loading="lazy">
-            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-            <span class="dur">2:00</span>
-          </button>
-          <figcaption>
-            <h3>Tip-controlled elastica robot</h3>
-            <p>The cable-driven robot at work: the beam tip is positioned on a target by optimising the cable loads, here tracing a reference shape.</p>
-            <p class="refs">Extreme Mechanics Letters (2020) · <a href="#cable-robot">Research</a></p>
-          </figcaption>
-        </figure>
-        <figure class="gal-item">
-          <button class="gal-open" type="button" data-src="gallery/elastic_ribbons.mp4"
-                  data-title="Elastic ribbons: simulations &amp; experiments" aria-label="Play video: Elastic ribbons, simulations and experiments">
-            <img src="gallery/elastic_ribbons.jpg" alt="" width="888" height="500" loading="lazy">
-            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-            <span class="dur">1:31</span>
-          </button>
-          <figcaption>
-            <h3>Elastic ribbons: simulations &amp; experiments</h3>
-            <p>Supplementary video for the paper: ribbons twisted in a test rig, measured as point clouds and compared with Cosserat plate simulations.</p>
-            <p class="refs">Journal of the Mechanics and Physics of Solids (2020) · <a href="#stereo">Research</a></p>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= PUBLICATIONS ================= -->
   <section id="publications">
     <div class="wrap">
@@ -739,6 +702,34 @@
         <div><h4>Simulation</h4><ul><li>ANSYS</li><li>Abaqus</li><li>COMSOL</li></ul></div>
         <div><h4>Design</h4><ul><li>Creo</li><li>SolidWorks</li><li>AutoCAD</li><li>Prototyping</li><li>3D printing</li><li>CNC programming</li></ul></div>
         <div><h4>Visual design</h4><ul><li>Scientific figures</li><li>Video making</li><li>Adobe Creative Suite</li><li>Inkscape</li><li>Blender</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <!-- Videos live in gallery/. To add one: copy a <figure> block, change data-src, data-title, the poster image and the caption. -->
+  <section id="gallery">
+    <div class="wrap">
+      <h2>Gallery</h2>
+      <div class="gal-grid">
+        <figure class="gal-item">
+          <button class="gal-open" type="button" data-src="gallery/tip-controlled%20elastica%20robot.mp4"
+                  data-title="Tip-controlled elastica robot" aria-label="Play video: Tip-controlled elastica robot">
+            <img src="gallery/tip-controlled-elastica-robot.jpg" alt="" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="dur">2:00</span>
+          </button>
+          <figcaption>Tip-controlled elastica robot</figcaption>
+        </figure>
+        <figure class="gal-item">
+          <button class="gal-open" type="button" data-src="gallery/elastic_ribbons.mp4"
+                  data-title="Elastic ribbons: simulations &amp; experiments" aria-label="Play video: Elastic ribbons, simulations and experiments">
+            <img src="gallery/elastic_ribbons.jpg" alt="" width="888" height="500" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="dur">1:31</span>
+          </button>
+          <figcaption>Elastic ribbons: simulations &amp; experiments</figcaption>
+        </figure>
       </div>
     </div>
   </section>
