@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-11-04">
+  <link rel="stylesheet" href="style.css?v=2026-11-04b">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -82,8 +82,10 @@
       </div>
 
       <figure class="elastica">
+        <div class="themes-row">
+        <span class="themes-label" aria-hidden="true">Research themes</span>
         <div class="themes">
-  <a class="theme-panel" href="#thermal">
+  <a class="theme-panel" href="#thermal" aria-label="Measure: Thermal expansion from post-buckled shapes" title="Measure: Thermal expansion from post-buckled shapes">
     <svg viewBox="0 0 320 220" role="img" aria-label="Buckled shapes of a strip clamped at both ends, with its midspan rise marked">
       <line class="ground" x1="20" y1="180" x2="300" y2="180"/>
       <path class="curve" style="--i:0" pathLength="1" d="M2.8,180.0 4.8,180.0 6.9,179.9 9.0,179.8 11.1,179.7 13.1,179.6 15.2,179.4 17.3,179.1 19.3,178.9 21.4,178.6 23.4,178.2 25.5,177.9 27.5,177.5 29.5,177.0 31.6,176.6 33.6,176.1 35.6,175.6 37.6,175.0 39.6,174.5 41.6,173.9 43.6,173.2 45.5,172.6 47.5,171.9 49.5,171.2 51.4,170.5 53.3,169.8 55.3,169.0 57.2,168.3 59.1,167.5 61.0,166.7 63.0,165.9 64.9,165.1 66.8,164.2 68.7,163.4 70.5,162.5 72.4,161.7 74.3,160.8 76.2,159.9 78.1,159.1 80.0,158.2 81.9,157.3 83.7,156.4 85.6,155.6 87.5,154.7 89.4,153.8 91.3,153.0 93.2,152.1 95.1,151.3 97.0,150.4 98.9,149.6 100.8,148.8 102.7,148.0 104.6,147.2 106.5,146.4 108.5,145.6 110.4,144.9 112.3,144.2 114.3,143.5 116.3,142.8 118.2,142.1 120.2,141.5 122.2,140.9 124.2,140.3 126.2,139.8 128.2,139.2 130.2,138.7 132.2,138.3 134.2,137.8 136.3,137.4 138.3,137.0 140.4,136.7 142.4,136.4 144.5,136.1 146.5,135.8 148.6,135.6 150.7,135.4 152.7,135.3 154.8,135.2 156.9,135.1 159.0,135.1 161.0,135.1 163.1,135.1 165.2,135.2 167.3,135.3 169.3,135.4 171.4,135.6 173.5,135.8 175.5,136.1 177.6,136.4 179.6,136.7 181.7,137.0 183.7,137.4 185.7,137.8 187.8,138.3 189.8,138.7 191.8,139.2 193.8,139.8 195.8,140.3 197.8,140.9 199.8,141.5 201.8,142.1 203.7,142.8 205.7,143.5 207.7,144.2 209.6,144.9 211.5,145.6 213.5,146.4 215.4,147.2 217.3,148.0 219.2,148.8 221.1,149.6 223.0,150.4 224.9,151.3 226.8,152.1 228.7,153.0 230.6,153.8 232.5,154.7 234.4,155.6 236.3,156.4 238.1,157.3 240.0,158.2 241.9,159.1 243.8,159.9 245.7,160.8 247.6,161.7 249.4,162.5 251.3,163.4 253.2,164.2 255.1,165.1 257.0,165.9 259.0,166.7 260.9,167.5 262.8,168.3 264.7,169.0 266.6,169.8 268.6,170.5 270.5,171.2 272.5,171.9 274.5,172.6 276.4,173.2 278.4,173.9 280.4,174.5 282.4,175.0 284.4,175.6 286.4,176.1 288.4,176.6 290.5,177.0 292.5,177.5 294.5,177.9 296.6,178.2 298.6,178.6 300.7,178.9 302.7,179.1 304.8,179.4 306.9,179.6 308.9,179.7 311.0,179.8 313.1,179.9 315.1,180.0 317.2,180.0"/>
@@ -95,9 +97,8 @@
       <text class="sym" x="169.0" y="122.1">δ</text>
     </svg>
     <span class="verb">Measure</span>
-    <span class="what">Thermal expansion from post-buckled shapes</span>
   </a>
-  <a class="theme-panel" href="#cable-robot">
+  <a class="theme-panel" href="#cable-robot" aria-label="Move: A cantilever beam as a cable robot" title="Move: A cantilever beam as a cable robot">
     <svg viewBox="0 0 320 220" role="img" aria-label="An elastic cantilever bent by two cables, with the path its tip can trace">
       <rect class="wall" x="50" y="86" width="10" height="52"/>
       <path class="trace" d="M91.7,-12.9 92.5,-13.0 93.3,-13.2 94.3,-13.3 95.3,-13.5 96.3,-13.6 97.5,-13.8 98.7,-14.0 100.1,-14.1 101.6,-14.3 103.2,-14.4 105.0,-14.6 107.0,-14.7 109.2,-14.8 111.7,-14.8 114.5,-14.8 117.7,-14.7 121.3,-14.5 125.5,-14.0 130.5,-13.3 136.4,-12.2 143.5,-10.5 152.4,-7.6 163.8,-2.7 179.7,6.6 209.1,34.5 229.2,150.0 204.9,194.3 190.5,208.6 180.1,216.5 171.9,221.6 165.1,225.1 159.4,227.7 154.6,229.6 150.4,231.1 146.7,232.2 143.4,233.1 140.4,233.8 137.8,234.3 135.4,234.8 133.2,235.1 131.2,235.4 129.3,235.6 127.6,235.8 126.1,236.0 124.6,236.1 123.2,236.2 122.0,236.2 120.8,236.3 119.7,236.3"/>
@@ -111,9 +112,8 @@
       <circle class="mark" cx="219.0" cy="173.9" r="5"/>
     </svg>
     <span class="verb">Move</span>
-    <span class="what">A cantilever beam as a cable robot</span>
   </a>
-  <a class="theme-panel" href="#stereo">
+  <a class="theme-panel" href="#stereo" aria-label="See: Stereo measurement of large deformations" title="See: Stereo measurement of large deformations">
     <svg viewBox="0 0 320 220" role="img" aria-label="A Möbius strip seen by two cameras, with sight lines to marker points">
       <g class="mobius">
       <path class="face" d="M163.0,71.4 L160.0,70.8 L160.0,10.8 L164.4,10.5 Z"/>
@@ -490,9 +490,9 @@
       </g>
     </svg>
     <span class="verb">See</span>
-    <span class="what">Stereo measurement of large deformations</span>
   </a>
 </div>
+        </div>
       </figure>
     </div>
   </section>
@@ -503,6 +503,7 @@
       <h2>Research</h2>
       <p class="lead wide">Experimental techniques built on slender elastic structures: using their large deformations to measure, to move and to see.</p>
 
+      <div class="rgrid">
       <article class="theme" id="thermal">
         <!-- Video: light theme uses images/research-thermal-expansion-light.mp4/.jpg, dark theme images/research-thermal-expansion.mp4/.jpg -->
         <div class="media">
@@ -513,10 +514,10 @@
           <button class="enlarge" type="button" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
         </div>
         <div>
+          <span class="eyebrow">Measure</span>
           <h3>Thermal expansion from post-buckled shapes</h3>
           <p>A heated beam held between fixed ends has nowhere to grow, so it buckles. Its post-buckled
-             shape carries the thermal strain, so reading that geometry gives the coefficient of thermal
-             expansion from a measurement of shape alone.</p>
+             shape gives the coefficient of thermal expansion from a measurement of shape alone.</p>
           <p class="refs">Acta Mechanica (2026); Talk at ICEM 2024</p>
         </div>
       </article>
@@ -531,10 +532,10 @@
           <button class="enlarge" type="button" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
         </div>
         <div>
+          <span class="eyebrow">Move</span>
           <h3>A cantilever beam as a cable robot</h3>
-          <p>Pulling cables attached along an elastic cantilever bends it into a controllable shape.
-             Using the mechanics of the elastica, we choose the loads that place the tip where we want it,
-             turning a simple strip into a flexible robotic arm.</p>
+          <p>Cables attached along an elastic cantilever bend it into a controllable shape. Using the
+             mechanics of the elastica, we choose the loads that place the tip where we want it.</p>
           <p class="refs">Journal of Applied Mechanics (2019); Extreme Mechanics Letters (2020); Indian patent 569440</p>
         </div>
       </article>
@@ -549,14 +550,14 @@
           <button class="enlarge" type="button" aria-label="Enlarge video" title="Enlarge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
         </div>
         <div>
+          <span class="eyebrow">See</span>
           <h3>Stereo measurement of large deformations</h3>
-          <p>Two calibrated cameras locate ArUco markers on a strongly deformed strip in 3D. Partial
-             reconstructions from several views share one frame, so they merge into the full shape, here a
-             Möbius strip. Comparing these shapes with simulations shows which mechanical models for
-             ribbons hold up and where they break down.</p>
+          <p>Two calibrated cameras locate ArUco markers on a strongly deformed strip in 3D, and partial
+             views merge into the full shape. Comparing these shapes with simulations tests models for ribbons.</p>
           <p class="refs">Journal of the Mechanics and Physics of Solids (2020); Proceedings of the Royal Society A (2021)</p>
         </div>
       </article>
+      </div>
     </div>
   </section>
 
@@ -566,55 +567,35 @@
       <h2>Publications</h2>
       <ol class="pubs" reversed>
         <li><span class="yr">2026</span>
-          <div>
-            <a class="title" href="https://doi.org/10.1007/s00707-026-04798-z" title="Open the paper (DOI)">A geometric technique for measuring thermal expansion via post-buckling in slender beams<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
-            <span class="authors"><strong>P. Handral</strong>, R. Rangarajan</span><br>
-            <span class="venue">Acta Mechanica</span>
-          </div>
+          <p class="cite"><a class="title" href="https://doi.org/10.1007/s00707-026-04798-z" title="Open the paper (DOI)"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>A geometric technique for measuring thermal expansion via post-buckling in slender beams</a>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="authors"><strong>P. Handral</strong>, R. Rangarajan</span>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="venue">Acta Mechanica</span></p>
           <!-- Replace images/pub-2026-thermal-expansion.jpg -->
           <figure class="pub-media">
             <img src="images/pub-2026-thermal-expansion.jpg" alt="Post-buckled beam used to measure thermal expansion" width="1200" height="800" loading="lazy">
           </figure>
         </li>
         <li><span class="yr">2021</span>
-          <div>
-            <a class="title" href="https://doi.org/10.1098/rspa.2021.0076" title="Open the paper (DOI)">More views of a one-sided surface: mechanical models and stereo vision techniques for Möbius strips<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
-            <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, R. Rangarajan</span><br>
-            <span class="venue">Proceedings of the Royal Society A</span> 477: 20210076
-          </div>
+          <p class="cite"><a class="title" href="https://doi.org/10.1098/rspa.2021.0076" title="Open the paper (DOI)"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>More views of a one-sided surface: mechanical models and stereo vision techniques for Möbius strips</a>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, R. Rangarajan</span>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="venue">Proceedings of the Royal Society A 477: 20210076</span></p>
           <!-- Replace images/pub-2021-mobius-strips.jpg -->
           <figure class="pub-media">
             <img src="images/pub-2021-mobius-strips.jpg" alt="Stereo reconstruction of a Möbius strip" width="1200" height="800" loading="lazy">
           </figure>
         </li>
         <li><span class="yr">2020</span>
-          <div>
-            <a class="title" href="https://doi.org/10.1016/j.jmps.2020.104070" title="Open the paper (DOI)">An investigation of models for elastic ribbons: Simulations &amp; experiments<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
-            <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, A. Karmakar, R. Rangarajan</span><br>
-            <span class="venue">Journal of the Mechanics and Physics of Solids</span>
-          </div>
+          <p class="cite"><a class="title" href="https://doi.org/10.1016/j.jmps.2020.104070" title="Open the paper (DOI)"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>An investigation of models for elastic ribbons: Simulations &amp; experiments</a>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, A. Karmakar, R. Rangarajan</span>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="venue">Journal of the Mechanics and Physics of Solids</span></p>
           <!-- Replace images/pub-2020-elastic-ribbons.jpg -->
           <figure class="pub-media">
             <img src="images/pub-2020-elastic-ribbons.jpg" alt="Elastic ribbon experiment" width="1200" height="800" loading="lazy">
           </figure>
         </li>
         <li><span class="yr">2020</span>
-          <div>
-            <a class="title" href="https://doi.org/10.1016/j.eml.2019.100584" title="Open the paper (DOI)">An elastica robot: Tip-control in tendon-actuated elastic arms<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
-            <span class="authors"><strong>P. Handral</strong>, R. Rangarajan</span><br>
-            <span class="venue">Extreme Mechanics Letters</span>
-          </div>
+          <p class="cite"><a class="title" href="https://doi.org/10.1016/j.eml.2019.100584" title="Open the paper (DOI)"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>An elastica robot: Tip-control in tendon-actuated elastic arms</a>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="authors"><strong>P. Handral</strong>, R. Rangarajan</span>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="venue">Extreme Mechanics Letters</span></p>
           <!-- Replace images/pub-2020-elastica-robot.jpg -->
           <figure class="pub-media">
             <img src="images/pub-2020-elastica-robot.jpg" alt="Tendon-actuated elastic arm" width="1200" height="800" loading="lazy">
           </figure>
         </li>
         <li><span class="yr">2019</span>
-          <div>
-            <a class="title" href="https://doi.org/10.1115/1.4041678" title="Open the paper (DOI)">Shape control for the elastica through load optimization<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
-            <span class="authors">A. Nayak, <strong>P. Handral</strong>, R. Rangarajan</span><br>
-            <span class="venue">Journal of Applied Mechanics</span>
-          </div>
+          <p class="cite"><a class="title" href="https://doi.org/10.1115/1.4041678" title="Open the paper (DOI)"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>Shape control for the elastica through load optimization</a>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="authors">A. Nayak, <strong>P. Handral</strong>, R. Rangarajan</span>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="venue">Journal of Applied Mechanics</span></p>
           <!-- Replace images/pub-2019-shape-control.jpg -->
           <figure class="pub-media">
             <img src="images/pub-2019-shape-control.jpg" alt="Elastica bent into a target shape" width="1200" height="800" loading="lazy">
@@ -632,7 +613,7 @@
         <!-- Replace images/patent-3d-printer.jpg -->
         <img src="images/patent-3d-printer.jpg" alt="Prototype of the cable-actuated flexible-arm 3D printer" width="1200" height="800" loading="lazy">
         <div>
-          <h3><a class="title" href="images/patent.jpeg" title="View the patent certificate">Polymer 3D printer with a cable-actuated flexible arm<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></h3>
+          <h3><a class="title" href="images/patent.jpeg" title="View the patent certificate"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>Polymer 3D printer with a cable-actuated flexible arm</a></h3>
           <p>A printer in which a compliant, cable-driven arm positions the nozzle, in place of rigid gantry axes.</p>
           <dl>
             <dt>Patent number</dt><dd>IN 569440, granted 31 July 2025</dd>
