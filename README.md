@@ -31,14 +31,15 @@ No code changes needed.
 | `pub-2020-elastic-ribbons.jpg` | JMPS 2020 paper | 1200 × 800 (3:2) |
 | `pub-2020-elastica-robot.jpg` | Extreme Mechanics Letters 2020 paper | 1200 × 800 (3:2) |
 | `pub-2019-shape-control.jpg` | J. Applied Mechanics 2019 paper | 1200 × 800 (3:2) |
-| `dare-to-dream.jpg` | Dare to Dream 2.0 award-ceremony photo | 1200 × 800 (3:2) |
+| `dare-to-dream.jpg` | Dare to Dream 2.0 award-ceremony photo (first item in the Gallery) | 1200 × 800 (3:2) |
 | `qr-handralp.svg` | QR code shown in Contact (opens https://handralp.github.io) | — |
 | `qr-handralp.png` | QR card with name and web address, sent by "Share QR code" | — |
 | `og-preview.jpg` | Preview image when the link is shared on WhatsApp/LinkedIn | 1200 × 630 |
 | `favicon.svg` | Browser-tab icon (already made; optional to change) | — |
 
 How pictures fit their frames:
-- **Research topics and the award photo:** shown whole inside a 3:2 frame (never cropped).
+- **Research topics:** shown whole inside a 3:2 frame (never cropped).
+- **Gallery thumbnails:** cropped to 16:9; the full picture or video opens when clicked.
 - **Publications:** fill their 3:2 frame and are cropped at the edges, so keep the important part near the centre.
 - **Patent:** shown whole, in a white frame that takes the picture's own shape.
 
@@ -51,12 +52,15 @@ of its labelled opening frame, shown until it plays. To give another topic a vid
 `<video …>` block in `index.html` and change the `src`, `poster`, `data-light` and `data-dark`
 names. Use MP4 (H.264), no audio, under ~10 MB.
 
-**Gallery:** the Gallery section (after Research) shows each video in `gallery/` as a
-thumbnail with a play button; clicking it opens the video in the same enlarged player, with a
-download icon. Details of each video are in `gallery/readme.txt`. To add one, put the `.mp4` and
-a `.jpg` poster frame in `gallery/`, then copy one `<figure class="gal-item">` block in `index.html`
-and change `data-src`, `data-title`, the poster and the text (write spaces in file names as `%20`).
-Gallery videos have a single version, used in both themes.
+**Gallery:** the Gallery section (just before Contact) shows each video in `gallery/` as a
+small thumbnail with a play button and its title only; clicking it opens the video in the large
+player, with a download icon. Gallery items stand on their own (no links to other sections), so
+pick videos that explain themselves. Details of each video are in `gallery/readme.txt`. To add one,
+put the `.mp4` and a `.jpg` poster frame in `gallery/`, then copy one `<figure class="gal-item">`
+block in `index.html` and change `data-src`, `data-title`, the poster and the caption (write spaces
+in file names as `%20`). Gallery videos have a single version, used in both themes.
+A gallery item can also be a photo (like the award photo): copy that block, which uses `data-img`
+instead of `data-src` and has no play button; it opens the photo full size with a download icon.
 
 **QR code:** the Contact section shows a QR code for https://handralp.github.io. The share icon
 on its corner opens a small menu: **Share link** or **Share QR code** (the PNG card with name). On phones
@@ -93,7 +97,9 @@ files. GitHub republishes automatically within a minute or two.
 
 - **Profile links:** ORCID and LinkedIn are in the Contact section. To add Google Scholar or GitHub,
   remove the `<!--` and `-->` around those two lines and put in your own URLs.
-- **New paper:** copy one `<li>…</li>` block in the Publications list and edit it.
+- **New paper:** copy one `<li>…</li>` block in the Publications list and edit it. The paper's
+  title is the link to its DOI (`href="https://doi.org/…"`), marked with a small link icon; the
+  patent title links to the certificate the same way.
 
 ## Checking locally
 

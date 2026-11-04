@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-11-02c">
+  <link rel="stylesheet" href="style.css?v=2026-11-04">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -70,13 +70,15 @@
             I work with Prof. Ramsharan Rangarajan, and before my PhD I spent five years at IISc as a
             research associate building flexible robots and vision-based measurement setups.
           </p>
+        </div>
+        <!-- Replace images/profile.jpg with your photo (square works best) -->
+        <div class="side">
+          <img class="portrait" src="images/profile.jpg" alt="Portrait of Handral Poornakanta" width="800" height="800">
           <div class="actions">
             <a class="btn btn-primary" href="files/Poornakanta_Handral_CV.pdf">Download CV</a>
             <a class="btn btn-secondary" href="mailto:poornakantah@iisc.ac.in">Email me</a>
           </div>
         </div>
-        <!-- Replace images/profile.jpg with your photo (square works best) -->
-        <img class="portrait" src="images/profile.jpg" alt="Portrait of Handral Poornakanta" width="800" height="800">
       </div>
 
       <figure class="elastica">
@@ -499,7 +501,7 @@
   <section id="research">
     <div class="wrap">
       <h2>Research</h2>
-      <p class="lead">Experimental techniques built on slender elastic structures: using their large deformations to measure, to move and to see.</p>
+      <p class="lead wide">Experimental techniques built on slender elastic structures: using their large deformations to measure, to move and to see.</p>
 
       <article class="theme" id="thermal">
         <!-- Video: light theme uses images/research-thermal-expansion-light.mp4/.jpg, dark theme images/research-thermal-expansion.mp4/.jpg -->
@@ -565,10 +567,9 @@
       <ol class="pubs" reversed>
         <li><span class="yr">2026</span>
           <div>
-            <span class="title">A geometric technique for measuring thermal expansion via post-buckling in slender beams</span><br>
+            <a class="title" href="https://doi.org/10.1007/s00707-026-04798-z" title="Open the paper (DOI)">A geometric technique for measuring thermal expansion via post-buckling in slender beams<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
             <span class="authors"><strong>P. Handral</strong>, R. Rangarajan</span><br>
-            <span class="venue">Acta Mechanica</span><br>
-            <a class="meta" href="https://doi.org/10.1007/s00707-026-04798-z">doi:10.1007/s00707-026-04798-z</a>
+            <span class="venue">Acta Mechanica</span>
           </div>
           <!-- Replace images/pub-2026-thermal-expansion.jpg -->
           <figure class="pub-media">
@@ -577,10 +578,9 @@
         </li>
         <li><span class="yr">2021</span>
           <div>
-            <span class="title">More views of a one-sided surface: mechanical models and stereo vision techniques for Möbius strips</span><br>
+            <a class="title" href="https://doi.org/10.1098/rspa.2021.0076" title="Open the paper (DOI)">More views of a one-sided surface: mechanical models and stereo vision techniques for Möbius strips<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
             <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, R. Rangarajan</span><br>
-            <span class="venue">Proceedings of the Royal Society A</span> 477: 20210076<br>
-            <a class="meta" href="https://doi.org/10.1098/rspa.2021.0076">doi:10.1098/rspa.2021.0076</a>
+            <span class="venue">Proceedings of the Royal Society A</span> 477: 20210076
           </div>
           <!-- Replace images/pub-2021-mobius-strips.jpg -->
           <figure class="pub-media">
@@ -589,10 +589,9 @@
         </li>
         <li><span class="yr">2020</span>
           <div>
-            <span class="title">An investigation of models for elastic ribbons: Simulations &amp; experiments</span><br>
+            <a class="title" href="https://doi.org/10.1016/j.jmps.2020.104070" title="Open the paper (DOI)">An investigation of models for elastic ribbons: Simulations &amp; experiments<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
             <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, A. Karmakar, R. Rangarajan</span><br>
-            <span class="venue">Journal of the Mechanics and Physics of Solids</span><br>
-            <a class="meta" href="https://doi.org/10.1016/j.jmps.2020.104070">doi:10.1016/j.jmps.2020.104070</a>
+            <span class="venue">Journal of the Mechanics and Physics of Solids</span>
           </div>
           <!-- Replace images/pub-2020-elastic-ribbons.jpg -->
           <figure class="pub-media">
@@ -601,10 +600,9 @@
         </li>
         <li><span class="yr">2020</span>
           <div>
-            <span class="title">An elastica robot: Tip-control in tendon-actuated elastic arms</span><br>
+            <a class="title" href="https://doi.org/10.1016/j.eml.2019.100584" title="Open the paper (DOI)">An elastica robot: Tip-control in tendon-actuated elastic arms<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
             <span class="authors"><strong>P. Handral</strong>, R. Rangarajan</span><br>
-            <span class="venue">Extreme Mechanics Letters</span><br>
-            <a class="meta" href="https://doi.org/10.1016/j.eml.2019.100584">doi:10.1016/j.eml.2019.100584</a>
+            <span class="venue">Extreme Mechanics Letters</span>
           </div>
           <!-- Replace images/pub-2020-elastica-robot.jpg -->
           <figure class="pub-media">
@@ -613,10 +611,9 @@
         </li>
         <li><span class="yr">2019</span>
           <div>
-            <span class="title">Shape control for the elastica through load optimization</span><br>
+            <a class="title" href="https://doi.org/10.1115/1.4041678" title="Open the paper (DOI)">Shape control for the elastica through load optimization<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><br>
             <span class="authors">A. Nayak, <strong>P. Handral</strong>, R. Rangarajan</span><br>
-            <span class="venue">Journal of Applied Mechanics</span><br>
-            <a class="meta" href="https://doi.org/10.1115/1.4041678">doi:10.1115/1.4041678</a>
+            <span class="venue">Journal of Applied Mechanics</span>
           </div>
           <!-- Replace images/pub-2019-shape-control.jpg -->
           <figure class="pub-media">
@@ -635,7 +632,7 @@
         <!-- Replace images/patent-3d-printer.jpg -->
         <img src="images/patent-3d-printer.jpg" alt="Prototype of the cable-actuated flexible-arm 3D printer" width="1200" height="800" loading="lazy">
         <div>
-          <h3>Polymer 3D printer with a cable-actuated flexible arm</h3>
+          <h3><a class="title" href="images/patent.jpeg" title="View the patent certificate">Polymer 3D printer with a cable-actuated flexible arm<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></h3>
           <p>A printer in which a compliant, cable-driven arm positions the nozzle, in place of rigid gantry axes.</p>
           <dl>
             <dt>Patent number</dt><dd>IN 569440, granted 31 July 2025</dd>
@@ -643,7 +640,6 @@
             <dt>Inventors</dt><dd>Affan Khan, Poornakanta Handral, C. S. Darshan Bhandari, Ramsharan Rangarajan, Shamrao</dd>
             <dt>Patentee</dt><dd>Indian Institute of Science</dd>
           </dl>
-          <p class="refs" style="margin-top:1rem"><a href="images/patent.jpeg">View the patent certificate</a></p>
         </div>
       </article>
     </div>
@@ -690,11 +686,6 @@
           </ul>
         </div>
       </div>
-      <figure class="award-photo">
-        <!-- Replace images/dare-to-dream.jpg with the award-ceremony photo -->
-        <img src="images/dare-to-dream.jpg" alt="Dare to Dream 2.0 award ceremony" width="1200" height="800" loading="lazy">
-        <figcaption>Dare to Dream 2.0 award ceremony, DRDO, October 2021.</figcaption>
-      </figure>
       <h3 class="tools-title">Skills</h3>
       <div class="tools">
         <div><h4>Experiments</h4><ul><li>Test-rig design</li><li>CMM (PC-DMIS)</li><li>Stereo vision</li><li>ArUco markers</li><li>Sensors &amp; actuators</li><li>DAQ systems (NI)</li></ul></div>
@@ -707,11 +698,19 @@
   </section>
 
   <!-- ================= GALLERY ================= -->
-  <!-- Videos live in gallery/. To add one: copy a <figure> block, change data-src, data-title, the poster image and the caption. -->
+  <!-- Videos live in gallery/. To add one: copy a video <figure> block, change data-src, data-title, the poster image and the caption.
+       For a photo, copy the award block instead (it uses data-img and has no play badge). -->
   <section id="gallery">
     <div class="wrap">
       <h2>Gallery</h2>
       <div class="gal-grid">
+        <figure class="gal-item">
+          <button class="gal-open" type="button" data-img="images/dare-to-dream.jpg"
+                  data-title="Dare to Dream 2.0 award, DRDO (2021)" aria-label="View photo: Dare to Dream 2.0 award, DRDO (2021)">
+            <img class="gal-photo" src="images/dare-to-dream.jpg" alt="" width="1200" height="800" loading="lazy">
+          </button>
+          <figcaption>Dare to Dream 2.0 award, DRDO (2021)</figcaption>
+        </figure>
         <figure class="gal-item">
           <button class="gal-open" type="button" data-src="gallery/tip-controlled%20elastica%20robot.mp4"
                   data-title="Tip-controlled elastica robot" aria-label="Play video: Tip-controlled elastica robot">
@@ -737,9 +736,9 @@
   <!-- ================= CONTACT ================= -->
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2>Contact</h2>
       <div class="contact-grid">
       <div>
+      <h2>Contact</h2>
       <p>Email <a href="mailto:poornakantah@iisc.ac.in">poornakantah@iisc.ac.in</a><br>
          Department of Mechanical Engineering, Indian Institute of Science, Bengaluru-12</p>
       <div class="links">
@@ -770,9 +769,10 @@
   </section>
 </main>
 
-<dialog class="lightbox" aria-label="Enlarged video">
+<dialog class="lightbox" aria-label="Enlarged view">
   <div class="lb-frame">
     <video class="lb-video" controls loop muted playsinline></video>
+    <img class="lb-img" alt="" hidden>
     <div class="lb-bar">
       <span class="lb-title"></span>
       <a class="lb-download" href="#" download aria-label="Download video (MP4, 1080p)" title="Download video (MP4, 1080p)">
@@ -787,7 +787,7 @@
 
 
 <footer class="site-footer">
-  <div class="wrap">Last updated October 2026</div>
+  <div class="wrap">Last updated November 2026</div>
 </footer>
 
 <script>
@@ -818,15 +818,18 @@ btn.addEventListener('click', function () {
   applyTheme(t);
   try { localStorage.setItem('theme', t); } catch (e) {}
 });
-/* Lightbox: enlarge a research or gallery video, with a download link for the version on screen. */
+/* Lightbox: enlarge a research video or a gallery item, with a download link for the version on screen. */
 var lb = document.querySelector('.lightbox'), lbv = lb.querySelector('.lb-video');
-function openLb(src, poster, title, label) {
-  lbv.poster = poster || ''; lbv.src = src;
+function openLb(src, poster, title, label, isImage) {
+  var img = lb.querySelector('.lb-img');
+  lbv.hidden = !!isImage; img.hidden = !isImage;
+  if (isImage) { img.src = src; img.alt = title; } else { lbv.poster = poster || ''; lbv.src = src; }
   var d = lb.querySelector('.lb-download');
   d.href = src; d.setAttribute('aria-label', label); d.title = label;
   lb.querySelector('.lb-title').textContent = title;
   document.querySelectorAll('video.autovideo').forEach(function (v) { v.pause(); });
   lb.showModal();
+  if (isImage) return;
   lbv.currentTime = 0;
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) lbv.play().catch(function () {});
 }
@@ -836,17 +839,18 @@ document.querySelectorAll('.media .enlarge').forEach(function (b) {
     openLb(v.getAttribute('src'), v.poster, v.closest('.theme').querySelector('h3').textContent, 'Download video (MP4, 1080p)');
   });
 });
-/* Gallery: each thumbnail opens its video in the same lightbox. */
+/* Gallery: each thumbnail opens its video (or photo) in the same lightbox. */
 document.querySelectorAll('.gal-open').forEach(function (b) {
   b.addEventListener('click', function () {
-    openLb(b.dataset.src, b.querySelector('img').getAttribute('src'), b.dataset.title, 'Download video (MP4)');
+    if (b.dataset.img) openLb(b.dataset.img, '', b.dataset.title, 'Download photo (JPG)', true);
+    else openLb(b.dataset.src, b.querySelector('img').getAttribute('src'), b.dataset.title, 'Download video (MP4)');
   });
 });
 function closeLb() { lbv.pause(); lb.close(); }
 lb.querySelector('.lb-close').addEventListener('click', closeLb);
 lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });     // click on the dimmed backdrop
 lb.addEventListener('close', function () {
-  lbv.pause(); lbv.removeAttribute('src'); lbv.load();
+  lbv.pause(); lbv.removeAttribute('src'); lbv.load(); lb.querySelector('.lb-img').removeAttribute('src');
   document.querySelectorAll('video.autovideo').forEach(function (v) {
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) v.play().catch(function () {});
   });
