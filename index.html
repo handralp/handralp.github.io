@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-11-04b">
+  <link rel="stylesheet" href="style.css?v=2026-11-04c">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -667,12 +667,19 @@
         </div>
       </div>
       <h3 class="tools-title">Skills</h3>
-      <div class="tools">
-        <div><h4>Experiments</h4><ul><li>Test-rig design</li><li>CMM (PC-DMIS)</li><li>Stereo vision</li><li>ArUco markers</li><li>Sensors &amp; actuators</li><li>DAQ systems (NI)</li></ul></div>
-        <div><h4>Coding</h4><ul><li>MATLAB</li><li>Mathematica</li><li>Python</li><li>C/C++</li><li>Arduino</li><li>Raspberry Pi</li><li>LabVIEW</li></ul></div>
-        <div><h4>Simulation</h4><ul><li>ANSYS</li><li>Abaqus</li><li>COMSOL</li></ul></div>
-        <div><h4>Design</h4><ul><li>Creo</li><li>SolidWorks</li><li>AutoCAD</li><li>Prototyping</li><li>3D printing</li><li>CNC programming</li></ul></div>
-        <div><h4>Visual design</h4><ul><li>Scientific figures</li><li>Video making</li><li>Adobe Creative Suite</li><li>Inkscape</li><li>Blender</li></ul></div>
+      <div class="skills">
+        <div><h4>Experiments</h4><ul><li>Actuators</li><li>ArUco</li><li>CMM</li><li>DAQ systems (NI)</li><li>KUKA 6-DOF robot</li><li>Sensors</li><li>Stereovision</li><li>Test-rig design</li></ul></div>
+        <div><h4>Coding</h4><ul><li>Arduino</li><li>C/C++</li><li>LabVIEW</li><li>Mathematica</li><li>MATLAB</li><li>Python</li><li>Raspberry Pi</li><li>RoboDK</li></ul></div>
+        <div><h4>Design</h4><ul><li>3D printing</li><li>AutoCAD</li><li>CNC programming</li><li>Creo</li><li>Prototyping</li><li>SolidWorks</li></ul></div>
+        <div><h4>Visual design</h4><ul><li>After Effects</li><li>Blender</li><li>Illustrator</li><li>Inkscape</li><li>Photoshop</li><li>Premiere Pro</li></ul></div>
+      </div>
+      <!-- Simulation tools with their logo marks (images/skills/). In dark mode the 3DS mark is shown in white. -->
+      <div class="sim-row"><span class="sim-label">Simulation</span>
+        <ul class="sim-logos">
+          <li><img class="rev" src="images/skills/icon-abaqus.png" alt="" width="121" height="128">Abaqus</li>
+          <li><img src="images/skills/icon-ansys.png" alt="" width="74" height="64">ANSYS</li>
+          <li><img src="images/skills/icon-comsol.png" alt="" width="115" height="64">COMSOL</li>
+        </ul>
       </div>
     </div>
   </section>

@@ -34,6 +34,7 @@ No code changes needed.
 | `dare-to-dream.jpg` | Dare to Dream 2.0 award-ceremony photo (first item in the Gallery) | 1200 × 800 (3:2) |
 | `qr-handralp.svg` | QR code shown in Contact (opens https://handralp.github.io) | — |
 | `qr-handralp.png` | QR card with name and web address, sent by "Share QR code" | — |
+| `skills/icon-*.png` | Logo marks for the Simulation row (Abaqus/3DS, ANSYS, COMSOL) | 64–128 px tall |
 | `og-preview.jpg` | Preview image when the link is shared on WhatsApp/LinkedIn | 1200 × 630 |
 | `favicon.svg` | Browser-tab icon (already made; optional to change) | — |
 
@@ -97,9 +98,17 @@ files. GitHub republishes automatically within a minute or two.
 
 - **Profile links:** ORCID and LinkedIn are in the Contact section. To add Google Scholar or GitHub,
   remove the `<!--` and `-->` around those two lines and put in your own URLs.
-- **New paper:** copy one `<li>…</li>` block in the Publications list and edit it. The paper's
-  title is the link to its DOI (`href="https://doi.org/…"`), marked with a small link icon; the
-  patent title links to the certificate the same way.
+- **New paper:** copy one `<li>…</li>` block in the Publications list and edit it. Each paper is
+  one paragraph: the linked title (the small link icon at its start opens the DOI), then the authors
+  (shown in italics) and the journal. The patent title links to the certificate the same way.
+- **Skills:** four text columns (Experiments, Coding, Design, Visual design), each kept in
+  alphabetical order, then a Simulation row showing each tool's logo mark from `images/skills/`
+  (`icon-abaqus.png` is the 3DS mark, shown in white in dark mode). To add a skill, insert an
+  `<li>` in the right place alphabetically; to add a simulation tool, add its logo to `images/skills/`
+  and copy one `<li><img …>Name</li>` line.
+- **Research topics:** each topic is a column in the Research section, with a small label
+  (Measure / Move / See) above its title that matches the figures at the top of the page. Keep each
+  description to about two sentences so the three columns stay level.
 
 ## Checking locally
 
