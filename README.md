@@ -27,7 +27,7 @@ No code changes needed.
 | `research-stereo-vision.mp4` + `.jpg` | Same, dark theme | 1920 × 1080 |
 | `patent-3d-printer.jpg` | The cable-actuated flexible-arm 3D printer | 1200 × 800 (3:2) |
 | `pub-2026-thermal-expansion.jpg` | Acta Mechanica 2026 paper | 1200 × 800 (3:2) |
-| `pub-2021-mobius-strips.jpg` | Proc. R. Soc. A 2021 paper | 1200 × 800 (3:2) |
+| `pub-2021-mobius-strips.png` | Proc. R. Soc. A 2021 paper (wider figure, shown whole on white) | about 1200 px wide |
 | `pub-2020-elastic-ribbons.jpg` | JMPS 2020 paper | 1200 × 800 (3:2) |
 | `pub-2020-elastica-robot.jpg` | Extreme Mechanics Letters 2020 paper | 1200 × 800 (3:2) |
 | `pub-2019-shape-control.jpg` | J. Applied Mechanics 2019 paper | 1200 × 800 (3:2) |
@@ -87,6 +87,12 @@ This public copy has no phone number on purpose.
 The site is published from the GitHub repository `handralp/handralp.github.io` (branch `main`,
 folder `/ (root)`, set in **Settings → Pages**) at https://handralp.github.io.
 The local copy is `D:\GitHub\webpage\handralp.github.io`; commit and push with GitHub Desktop.
+
+## Menu and navigation
+
+The menu bar holds the theme switch and the section links, centred, starting with **About** (the
+intro at the top). The link for the section on screen is underlined as you scroll. A round
+back-to-top button appears at the bottom-right once the intro has scrolled away.
 
 ## Updating later
 

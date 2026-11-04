@@ -20,7 +20,7 @@
     /* Light theme by default; a visitor's own choice (the header switch) is remembered. */
     try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="style.css?v=2026-11-04c">
+  <link rel="stylesheet" href="style.css?v=2026-11-04d">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "Person",
    "name": "Handral Poornakanta", "url": "https://handralp.github.io/", "alternateName": "Poornakanta Handral",
@@ -40,9 +40,9 @@
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
       </button>
-      <a class="brand" href="#top">Handral Poornakanta</a>
     </div>
     <nav class="site-nav" aria-label="Sections">
+      <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#patent">Patent</a>
@@ -57,7 +57,7 @@
 <main id="top">
 
   <!-- ================= HERO ================= -->
-  <section class="hero">
+  <section class="hero" id="about">
     <div class="wrap">
       <div class="hero-grid">
         <div>
@@ -574,9 +574,9 @@
         </li>
         <li><span class="yr">2021</span>
           <p class="cite"><a class="title" href="https://doi.org/10.1098/rspa.2021.0076" title="Open the paper (DOI)"><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>More views of a one-sided surface: mechanical models and stereo vision techniques for Möbius strips</a>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="authors">A. Kumar, <strong>P. Handral</strong>, C. S. D. Bhandari, R. Rangarajan</span>&nbsp;<span class="sep" aria-hidden="true">|</span> <span class="venue">Proceedings of the Royal Society A 477: 20210076</span></p>
-          <!-- Replace images/pub-2021-mobius-strips.jpg -->
+          <!-- Replace images/pub-2021-mobius-strips.png -->
           <figure class="pub-media">
-            <img src="images/pub-2021-mobius-strips.jpg" alt="Stereo reconstruction of a Möbius strip" width="1200" height="800" loading="lazy">
+            <img class="whole" src="images/pub-2021-mobius-strips.png" alt="Stereo reconstruction of a Möbius strip" width="1163" height="657" loading="lazy">
           </figure>
         </li>
         <li><span class="yr">2020</span>
@@ -699,6 +699,13 @@
           <figcaption>Dare to Dream 2.0 award, DRDO (2021)</figcaption>
         </figure>
         <figure class="gal-item">
+          <button class="gal-open" type="button" data-img="gallery/tip-controlled-elastic-robot-for-laser-engraving.jpg"
+                  data-title="Tip-controlled elastic robot for laser engraving" aria-label="View photo: Tip-controlled elastic robot for laser engraving">
+            <img class="gal-photo" src="gallery/tip-controlled-elastic-robot-for-laser-engraving.jpg" alt="" width="1280" height="762" loading="lazy">
+          </button>
+          <figcaption>Tip-controlled elastic robot for laser engraving</figcaption>
+        </figure>
+        <figure class="gal-item">
           <button class="gal-open" type="button" data-src="gallery/tip-controlled%20elastica%20robot.mp4"
                   data-title="Tip-controlled elastica robot" aria-label="Play video: Tip-controlled elastica robot">
             <img src="gallery/tip-controlled-elastica-robot.jpg" alt="" width="1280" height="720" loading="lazy">
@@ -772,6 +779,10 @@
   </div>
 </dialog>
 
+
+<a class="to-top" href="#about" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6.5 11.5L12 6l5.5 5.5"/></svg>
+</a>
 
 <footer class="site-footer">
   <div class="wrap">Last updated November 2026</div>
@@ -869,6 +880,16 @@ shareMenu.addEventListener('click', function (e) {
     var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name;
     document.body.appendChild(a); a.click(); a.remove(); say('QR code downloaded');
   });
+});
+/* Back-to-top button: shown once the intro has scrolled away. */
+var toTop = document.querySelector('.to-top');
+new IntersectionObserver(function (e) { toTop.classList.toggle('show', !e[0].isIntersecting); })
+  .observe(document.getElementById('about'));
+toTop.addEventListener('click', function (e) {
+  e.preventDefault();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  if (history.replaceState) history.replaceState(null, '', location.pathname);
 });
 /* 2. Highlight the menu link for the section on screen. */
 var links = {};

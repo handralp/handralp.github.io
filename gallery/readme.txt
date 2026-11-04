@@ -1,4 +1,7 @@
-Gallery videos (shown in the Gallery section of index.html)
+Gallery items (shown in the Gallery section of index.html)
+
+tip-controlled-elastic-robot-for-laser-engraving.jpg
+  Tip-controlled elastic robot for laser engraving (photo; opens full size)
 
 tip-controlled elastica robot.mp4
   Tip-controlled elastica robot

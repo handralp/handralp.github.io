@@ -53,12 +53,11 @@ a:hover { text-decoration-thickness: 2px; }
   border-bottom: 1px solid var(--rule);
 }
 .site-header .wrap {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
   gap: 1rem; min-height: 3.5rem; flex-wrap: wrap;
 }
-.brand-group { display: flex; align-items: center; gap: 0.4rem; margin-left: -0.55rem; }
-.brand { font: 600 1rem/1 var(--serif); color: var(--ink); text-decoration: none; }
-.site-nav { margin-left: auto; display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.95rem; }
+.brand-group { display: flex; align-items: center; gap: 0.4rem; }
+.site-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; font-size: 0.95rem; }
 .site-nav a { color: var(--muted); text-decoration: none; }
 .theme-toggle {
   display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; padding: 0;
@@ -214,6 +213,9 @@ p { margin: 0 0 1rem; }
   border: 1px solid var(--rule); border-radius: 4px;
 }
 
+/* A wider figure shown whole in its thumbnail frame */
+.pub-media img.whole { object-fit: contain; background: #FFFFFF; }
+
 /* Publications: year in the margin */
 .pubs { list-style: none; margin: 0; padding: 0; }
 .pubs li {
@@ -258,7 +260,7 @@ a.title .ext { display: inline-block; width: 0.8em; height: 0.8em; margin-right:
 .skills ul { list-style: none; margin: 0; padding: 0; }
 .skills li { padding: 0.18rem 0; font-size: 0.98rem; }
 .sim-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); align-items: center; gap: 0.5rem 1rem;
-  padding: 0.75rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  padding: 0.4rem 0 0.75rem; }
 .sim-label { font: 600 0.95rem/1.5 var(--sans); color: var(--accent); }
 .sim-logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; }
 .sim-logos li { display: inline-flex; align-items: center; gap: 0.45rem; }
@@ -271,7 +273,7 @@ a.title .ext { display: inline-block; width: 0.8em; height: 0.8em; margin-right:
 .links { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 0.5rem; }
 
 /* Gallery: video thumbnails that open in the lightbox */
-.gal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 1.5rem; margin-top: 1rem; max-width: 48rem; }
+.gal-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1rem; }
 .gal-item { margin: 0; }
 .gal-open {
   position: relative; display: block; width: 100%; padding: 0; cursor: pointer;
@@ -324,6 +326,20 @@ a.title .ext { display: inline-block; width: 0.8em; height: 0.8em; margin-right:
 .share-menu button:hover, .share-menu button:focus-visible { background: var(--paper); color: var(--accent); }
 .share-status { min-height: 1.2em; margin: 0.25rem 0 0; font-size: 0.8rem; color: var(--accent); }
 
+/* Back-to-top button, bottom-right, appears after the intro */
+.to-top {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 9; width: 2.6rem; height: 2.6rem;
+  display: grid; place-items: center; border-radius: 50%;
+  color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  opacity: 0; visibility: hidden; transform: translateY(0.5rem);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { color: var(--accent); border-color: var(--accent); }
+.to-top svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+
 .site-footer { margin-top: 4rem; padding: 1.5rem 0 2.5rem; border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--muted); }
 
 /* ---------- Small screens ---------- */
@@ -345,7 +361,10 @@ a.title .ext { display: inline-block; width: 0.8em; height: 0.8em; margin-right:
   .pub-media { max-width: 10rem; }
   .patent dl { grid-template-columns: 1fr; }
   .patent dt { margin-top: 0.5rem; }
-  .site-nav { gap: 0.9rem; font-size: 0.9rem; }
+  .site-header .wrap { flex-wrap: nowrap; gap: 0.6rem; padding-top: 0.35rem; padding-bottom: 0.35rem; }
+  .brand-group { flex: none; margin-left: -0.3rem; }
+  .site-nav { flex: 1; font-size: 0.84rem; column-gap: 0.75rem; row-gap: 0.15rem; }
+  .to-top { right: 0.9rem; bottom: 0.9rem; }
   .gal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
   .contact-grid { grid-template-columns: 1fr; }
   .qr { width: 10rem; }
